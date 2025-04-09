@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>griffins bananas</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            cursor: pointer;
+            font-size: 3em;
+            user-select: text;
+        }
+
+        h1::selection {
+            background: yellow;
+            color: black;
+            animation: bounce 0.6s ease;
+        }
+
+        @keyframes bounce {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1) rotate(1deg); }
+            50% { transform: scale(0.95) rotate(-1deg); }
+            75% { transform: scale(1.05) rotate(1deg); }
+            100% { transform: scale(1) rotate(0); }
+        }
+    </style>
+</head>
+<body>
+    <h1 onclick="redirectToRandomVideo()">griffins bananas</h1>
+
+    <script>
+        function redirectToRandomVideo() {
+            const videos = [
+                'https://www.youtube.com/watch?v=L1QVp55ehvs',
+                'https://www.youtube.com/watch?v=URyyceFDioQ',
+                'https://www.youtube.com/watch?v=Tvwz1809v94',
+                'https://www.youtube.com/watch?v=3z2jZMq_Vog',
+                'https://www.youtube.com/watch?v=sbJoaVhjpkk'
+            ];
+            const randomIndex = Math.floor(Math.random() * videos.length);
+            window.location.href = videos[randomIndex];
+        }
+    </script>
+</body>
+</html>
